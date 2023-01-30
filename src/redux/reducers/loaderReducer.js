@@ -5,7 +5,7 @@ import {
 } from "../types/types";
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: false,
   message: "",
 };

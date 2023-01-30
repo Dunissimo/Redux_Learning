@@ -13,7 +13,9 @@ const App = () => {
   }));
 
   const comments = error ? (
-    <h1 className="text-red-500">{message}</h1>
+    <h1 className="text-red-500">
+      Something went wrong! <br /> {message}
+    </h1>
   ) : (
     <>
       <CommentsList />

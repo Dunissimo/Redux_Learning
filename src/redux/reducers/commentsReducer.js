@@ -14,12 +14,12 @@ export const commentsReducer = (state = initialState, action) => {
       const { comments } = state;
       const itemIndex = comments.findIndex((res) => res.id === id);
 
-      const nextComments = [
+      const newComments = [
         ...comments.slice(0, itemIndex),
         ...comments.slice(itemIndex + 1),
       ];
 
-      return { ...state, comments: nextComments };
+      return { ...state, comments: newComments };
 
     case COMMENTS_LOAD:
       const commentsNew = action.payload.map((res) => {

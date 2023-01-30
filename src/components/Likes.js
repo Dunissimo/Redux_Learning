@@ -5,20 +5,17 @@ import { useSelector, useDispatch } from "react-redux";
 const Likes = () => {
   const dispatch = useDispatch();
 
-  const props = useSelector(({ likesReducer }) => {
-    return {
-      likes: likesReducer.likes,
-      incrementLikes: () => dispatch(incrementLikes()),
-      decrementLikes: () => dispatch(decrementLikes()),
-    };
-  });
+  const { likes } = useSelector((state) => state.likesReducer);
 
   return (
     <div className="button-controls text-blue-400">
-      <button className="button" onClick={props.incrementLikes}>
-        ❤ {props.likes}
+      <button className="button" onClick={() => dispatch(incrementLikes())}>
+        ❤ {likes}
       </button>
-      <button className="button ml-4" onClick={props.decrementLikes}>
+      <button
+        className="button ml-4"
+        onClick={() => dispatch(decrementLikes())}
+      >
         Dislikes
       </button>
     </div>
